@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weather Dashboard</title>
+
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <script type="module" crossorigin src="/12_weather-dashboard2/assets/index-Dh8mKIHd.js"></script>
+  <link rel="stylesheet" crossorigin href="/12_weather-dashboard2/assets/index-8peahMl9.css">
+</head>
+
+<body>
+
+<canvas id="weatherCanvas"></canvas>
+
+<div class="container">
+
+<div class="card search-card">
+
+<input id="searchBox" placeholder="Search location">
+
+<div id="suggestions"></div>
+
+<button id="useLocation">Use Current Location</button>
+
+</div>
+
+<div class="card weather-card" id="weatherCard">
+
+<div class="weather-main">
+
+<div class="left">
+
+<div id="icon">
+
+<lottie-player
+id="weatherAnimation"
+background="transparent"
+speed="1"
+style="width:100px;height:100px"
+loop
+autoplay>
+
+</lottie-player>
+
+</div>
+
+<h1 id="temp"></h1>
+
+<p id="condition"></p>
+
+</div>
+
+<div class="right">
+
+<h2 id="time"></h2>
+
+<p id="location"></p>
+
+</div>
+
+</div>
+
+<div class="details">
+
+<div>Humidity <span id="humidity"></span></div>
+<div>Wind <span id="wind"></span></div>
+<div>Visibility <span id="visibility"></span></div>
+<div>Pressure <span id="pressure"></span></div>
+
+</div>
+
+</div>
+
+<div id="hourlyDropdown" class="card hidden"></div>
+
+<div class="forecast-wrapper">
+
+<div id="forecast"></div>
+
+</div>
+
+</div>
+
+<div id="popup">
+
+<div class="popupCard">
+
+<h3>Use your current location?</h3>
+
+<button id="allowLocation">Allow</button>
+
+<button id="cancelLocation">Cancel</button>
+
+</div>
+
+</div>
+
+
+</body>
+
+</html>
