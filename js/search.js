@@ -1,44 +1,34 @@
-const GEO_KEY="84ebd484e9524137b14daee91201ad42"
+const GEO_KEY = "84ebd484e9524137b14daee91201ad42";
 
-export function setupSearch(loadWeather){
+export function setupSearch(loadWeather) {
+  const input = document.getElementById("searchBox");
+  const suggestions = document.getElementById("suggestions");
 
-const input=document.getElementById("searchBox")
-const suggestions=document.getElementById("suggestions")
+  input.addEventListener("input", async () => {
+    let q = input.value;
 
-input.addEventListener("input",async()=>{
+    if (q.length < 3) return;
 
-let q=input.value
+    let res = await fetch(
+      `https://api.geoapify.com/v1/geocode/autocomplete?text=${q}&apiKey=${GEO_KEY}`,
+    );
 
-if(q.length<3) return
+    let data = await res.json();
 
-let res=await fetch(
-`https://api.geoapify.com/v1/geocode/autocomplete?text=${q}&apiKey=${GEO_KEY}`
-)
+    suggestions.innerHTML = "";
 
-let data=await res.json()
+    data.features.forEach((place) => {
+      let div = document.createElement("div");
 
-suggestions.innerHTML=""
+      div.innerText = place.properties.formatted;
 
-data.features.forEach(place=>{
+      div.onclick = () => {
+        loadWeather(place.properties.lat, place.properties.lon);
 
-let div=document.createElement("div")
+        suggestions.innerHTML = "";
+      };
 
-
-
-div.innerText=place.properties.formatted
-
-div.onclick=()=>{
-
-loadWeather(place.properties.lat,place.properties.lon)
-
-suggestions.innerHTML=""
-
-}
-
-suggestions.appendChild(div)
-
-})
-
-})
-
+      suggestions.appendChild(div);
+    });
+  });
 }

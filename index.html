@@ -3,105 +3,100 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Weather Dashboard</title>
+    <title>Weather Dashboard</title>
 
-<link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css">
 
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </head>
 
 <body>
 
-<canvas id="weatherCanvas"></canvas>
+    <canvas id="weatherCanvas"></canvas>
 
-<div class="container">
+    <div class="container">
 
-<div class="card search-card">
+        <div class="card search-card">
 
-<input id="searchBox" placeholder="Search location">
+            <input id="searchBox" placeholder="Search location">
 
-<div id="suggestions"></div>
+            <div id="suggestions"></div>
 
-<button id="useLocation">Use Current Location</button>
+            <button id="useLocation">Use Current Location</button>
 
-</div>
+        </div>
 
-<div class="card weather-card" id="weatherCard">
+        <div class="card weather-card" id="weatherCard">
 
-<div class="weather-main">
+            <div class="weather-main">
 
-<div class="left">
+                <div class="left">
 
-<div id="icon">
+                    <div id="icon">
 
-<lottie-player
-id="weatherAnimation"
-background="transparent"
-speed="1"
-style="width:100px;height:100px"
-loop
-autoplay>
+                        <lottie-player id="weatherAnimation" background="transparent" speed="1"
+                            style="width:100px;height:100px" loop autoplay>
 
-</lottie-player>
+                        </lottie-player>
 
-</div>
+                    </div>
 
-<h1 id="temp"></h1>
+                    <h1 id="temp"></h1>
 
-<p id="condition"></p>
+                    <p id="condition"></p>
 
-</div>
+                </div>
 
-<div class="right">
+                <div class="right">
 
-<h2 id="time"></h2>
+                    <h2 id="time"></h2>
 
-<p id="location"></p>
+                    <p id="location"></p>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-<div class="details">
+            <div class="details">
 
-<div>Humidity <span id="humidity"></span></div>
-<div>Wind <span id="wind"></span></div>
-<div>Visibility <span id="visibility"></span></div>
-<div>Pressure <span id="pressure"></span></div>
+                <div>Humidity <span id="humidity"></span></div>
+                <div>Wind <span id="wind"></span></div>
+                <div>Visibility <span id="visibility"></span></div>
+                <div>Pressure <span id="pressure"></span></div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-<div id="hourlyDropdown" class="card hidden"></div>
+        <div id="hourlyDropdown" class="card hidden"></div>
 
-<div class="forecast-wrapper">
+        <div class="forecast-wrapper">
 
-<div id="forecast"></div>
+            <div id="forecast"></div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<div id="popup">
+    <div id="popup">
 
-<div class="popupCard">
+        <div class="popupCard">
 
-<h3>Use your current location?</h3>
+            <h3>Use your current location?</h3>
 
-<button id="allowLocation">Allow</button>
+            <button id="allowLocation">Allow</button>
 
-<button id="cancelLocation">Cancel</button>
+            <button id="cancelLocation">Cancel</button>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<script type="module" src="./main.js"></script>
+    <script type="module" src="./main.js"></script>
 
 </body>
 
